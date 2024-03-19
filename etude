@@ -1,10 +1,7 @@
-mila kitihiana:
-
-ClassAnnotation JavaSpringModel
-
-fieldsNonPrimaryKeyDeclaration
-
-fieldsWithPrimaryKey
-
-manisy pour chaque attribut Up amle nom anle attribut
-
+import
+Entity
+incNav
+incAppHeader
+Column
+entity
+PkName
