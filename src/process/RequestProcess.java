@@ -36,7 +36,6 @@ public class RequestProcess {
 
     }
 
-
     public String getResultstAsString() throws Exception {
         Result[] results = getResults();
         StringBuilder stringBuilder = new StringBuilder();
@@ -99,7 +98,7 @@ public class RequestProcess {
                         search(new String[] { "types", dataSource.getAttributes()[i].getNewType() }));
 
             } catch (Exception e) {
-                System.out.println("Pas de import  pour: " + dataSource.getAttributes()[i].getNewType());
+                System.out.println("Pas de import  pour: " + dataSource.getAttributes()[i].getTypeSQL()+" => "+dataSource.getAttributes()[i].getNewType());
             }
         }
         this.dataSource = dataSource;

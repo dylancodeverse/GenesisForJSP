@@ -22,7 +22,7 @@ endLine:{
 
 Imports:{
     java:{
-        import #packageSource# ;
+import #packageSource# ;
     }    
     c#:{
         using #packageSource# ;
@@ -46,15 +46,15 @@ annotationDeclaration:{
 
 fieldsNoPrimaryKeyDeclaration:{
     java-spring-model:{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "#name#", nullable = false)    
     #encaps# #type# #name# ;
     }
 }    
 
 fieldsWithPrimaryKey:{
     java-spring-model:{
-    @Column(name = "#name#", nullable = false)    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     #encaps# #type# #name# ;
     }
 }
@@ -99,9 +99,9 @@ fieldsDeclaration:{
 
 functionDeclaration:{
     java:{
-        #encaps# #return# #name# (#args#) /{
-            #body#
-        /}
+    #encaps# #return# #name# (#args#) /{
+        #body#
+    /}
     }
 }
 

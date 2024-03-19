@@ -21,13 +21,13 @@ public class MainProcess {
      * @return
      * @throws Exception
      */
-    public static DataSource[] getDataSources(String url, String user, String paswd) throws Exception {
+    public DataSource[] getDataSources(String url, String user, String paswd) throws Exception {
         DataSource[] dataSources = new SQLDataHandler(url, user,
                 paswd).getDataSources();
         return dataSources;
     }
 
-    public static void scriptProcess(String generationFile, String templateName, String[] table) throws Exception {
+    public void scriptProcess(String generationFile, String templateName, String[] table) throws Exception {
 
         Tmpl tmpl = new Tmpl(generationFile);
         // from configuration
@@ -87,7 +87,7 @@ public class MainProcess {
 
     }
 
-    private static String search(Tmpl tmpl, String[] toSearch, String templateName) throws Exception {
+    private String search(Tmpl tmpl, String[] toSearch, String templateName) throws Exception {
         Children c = tmpl.search(toSearch);
         try {
             return c.BFS(templateName).getValue();
