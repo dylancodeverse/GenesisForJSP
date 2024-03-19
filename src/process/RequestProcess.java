@@ -98,8 +98,8 @@ public class RequestProcess {
                         search(new String[] { "types", dataSource.getAttributes()[i].getNewType() }));
 
                 dataSource.getAttributes()[i]
-                        .setHtmlType(
-                                search(new String[] { "HTMLType", dataSource.getAttributes()[i].getHtmlType() })
+                        .setHTMLType(
+                                search(new String[] { "HTMLType", dataSource.getAttributes()[i].getHTMLType() })
                                         .trim());
             } catch (Exception e) {
                 System.out.println("Pas de import  pour: " + dataSource.getAttributes()[i].getTypeSQL() + " => "

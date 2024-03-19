@@ -10,7 +10,7 @@ public class Attribute {
 
     String possibleImport;
 
-    String htmlType;
+    String HTMLType;
 
     ForeignKeyInformation foreignKeyInformation;
 
@@ -77,12 +77,12 @@ public class Attribute {
         this.foreignTableName = foreignTableName;
     }
 
-    public String getHtmlType() {
-        return htmlType;
+    public String getHTMLType() {
+        return HTMLType;
     }
 
-    public void setHtmlType(String htmlType) {
-        this.htmlType = htmlType;
+    public void setHTMLType(String HTMLType) {
+        this.HTMLType = HTMLType;
     }
 
 }
