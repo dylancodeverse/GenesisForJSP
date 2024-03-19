@@ -13,7 +13,7 @@ Imports:{
 head:{
     jsp-list:{
 <html>
-<jsp:include page="../../templates/header.jsp">
+<jsp:include page="#incHeaderFile#">
     <jsp:param name="title" value="#Entity# list"/>
 </jsp:include>
     }
