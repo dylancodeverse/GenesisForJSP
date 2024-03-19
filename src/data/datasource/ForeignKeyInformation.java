@@ -18,6 +18,10 @@ public class ForeignKeyInformation {
         return tableOrigine;
     }
 
+    public String getTableOrigineUpFirst() {
+        return tableOrigine.substring(0, 1).toUpperCase() + tableOrigine.substring(1);
+    }
+
     public void setTableOrigine(String tableOrigine) {
         this.tableOrigine = tableOrigine;
     }

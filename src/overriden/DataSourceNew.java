@@ -40,7 +40,7 @@ public class DataSourceNew extends DataSource {
         Attribute[] aaAttributes = getAttributes();
         ArrayList<Attribute> ls = new ArrayList<>();
         for (int i = 0; i < aaAttributes.length; i++) {
-            if (aaAttributes[i].getAttrName() != null && aaAttributes[i].getForeignTableName() == null) {
+            if (aaAttributes[i].getAttrName() != null && aaAttributes[i].getForeignTableName() == null && aaAttributes[i].getForeignKeyInformation()==null) {
                 aaAttributes[i].setAttrName(upfirst(aaAttributes[i].getAttrName()));
                 ls.add(aaAttributes[i]);
 

@@ -56,7 +56,15 @@ fieldsNoPrimaryKeyDeclaration:{
     @Column(name = "#name#", nullable = false)    
     #encaps# #type# #name# ;
     }
-}    
+}   
+
+fieldsForeignClass:{
+    java-spring-model:{
+        @ManyToOne
+        @JoinColumn(name = "#name#", nullable = false)
+        #encaps# #type# #name# ;
+    }
+}
 
 fieldsWithPrimaryKey:{
     java-spring-model:{
