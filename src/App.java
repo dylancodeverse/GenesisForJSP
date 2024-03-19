@@ -3,8 +3,8 @@ import process.MainProcess;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        new MainProcessNew() .scriptProcess(
+        new MainProcessNew().scriptProcess(
                 "C:\\Users\\MISA\\Desktop\\Workspace\\S6\\Mr-Naina\\GenesisForJSP\\test\\fichierdegeneration.tmpl",
-                "java-spring-controller", new String[] { "promotion" });
+                "jsp-list", new String[] { "promotion" });
     }
 }
