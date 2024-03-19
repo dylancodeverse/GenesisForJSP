@@ -17,17 +17,17 @@
 
                                 <div class="mb-3">
                                     <label for="name" class="form-label">#Column#:</label>
-                                    <input type="not defined" id="Id" name="Id" class="form-control" required />
+                                    <input type="number" id="Id" name="Id" class="form-control" required />
                                     <div class="form-text">For errors for example.</div>
                                 </div>        
                                 <div class="mb-3">
                                     <label for="name" class="form-label">#Column#:</label>
-                                    <input type="not defined" id="Name" name="Name" class="form-control" required />
+                                    <input type="text" id="Name" name="Name" class="form-control" required />
                                     <div class="form-text">For errors for example.</div>
                                 </div>        
                                 <div class="mb-3">
                                     <label for="name" class="form-label">#Column#:</label>
-                                    <input type="not defined" id="Year" name="Year" class="form-control" required />
+                                    <input type="number" id="Year" name="Year" class="form-control" required />
                                     <div class="form-text">For errors for example.</div>
                                 </div>        
 

@@ -175,3 +175,47 @@ bodySix:{
 
 
 
+HTMLType:{
+    varchar:{
+        jsp:{
+            text        
+        }
+
+    }
+
+    int4:{
+        jsp:{
+            number
+        }
+    }
+
+    Integer:{
+        jsp:{
+            number
+        }
+    }
+
+    float8:{
+        jsp:{
+            number
+        }
+    }
+
+    date:{
+        jsp:{
+            Date
+        }
+    }
+
+    serial:{
+        jsp:{
+            number
+        }
+    }
+
+    numeric:{
+        jsp:{
+            number
+        }
+    }
+}    

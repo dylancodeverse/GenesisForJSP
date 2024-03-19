@@ -94,16 +94,25 @@ public class RequestProcess {
                 dataSource.getAttributes()[i]
                         .setNewType(
                                 search(new String[] { "SQLType", dataSource.getAttributes()[i].getTypeSQL() }).trim());
+
+            } catch (Exception e) {
+                System.out.println("Type introuvable  pour: " + dataSource.getAttributes()[i].getTypeSQL());
+            }
+            try {
                 dataSource.getAttributes()[i].setPossibleImport(
                         search(new String[] { "types", dataSource.getAttributes()[i].getNewType() }));
 
+            } catch (Exception e) {
+                System.out.println("Pas de import possible pour: " + dataSource.getAttributes()[i].getNewType());
+            }
+            try {
+
                 dataSource.getAttributes()[i]
                         .setHTMLType(
-                                search(new String[] { "HTMLType", dataSource.getAttributes()[i].getHTMLType() })
+                                search(new String[] { "HTMLType", dataSource.getAttributes()[i].getTypeSQL() })
                                         .trim());
             } catch (Exception e) {
-                System.out.println("Pas de import  pour: " + dataSource.getAttributes()[i].getTypeSQL() + " => "
-                        + dataSource.getAttributes()[i].getNewType());
+                System.out.println("Pas de HTMLType  pour: " + dataSource.getAttributes()[i].getTypeSQL());
             }
         }
         this.dataSource = dataSource;
