@@ -147,47 +147,48 @@ randomContent:{
     }
 
     java-spring-controller:{
-    public #Entity#Controller(#Entity#Service #entity#Service) {
+    public #Entity#Controller(#Entity#Service #entity#Service) /{
         this.#entity#Service = #entity#Service;
-    }
+    /}
 
     @GetMapping("/list")
-    public String list#Entity#s(Model model) {
+    public String list#Entity#s(Model model) /{
         model.addAttribute("#entity#s", #entity#Service.findAll());
         return "pages/#entity#/list";
-    }
+    /}
 
     @GetMapping("/add")
-    public String showAdd#Entity#Form(Model model) {
+    public String showAdd#Entity#Form(Model model) /{
         return "pages/#entity#/add";
-    }
+    /}
 
     @PostMapping("/add")
-    public String add#Entity#(#Entity# #entity#) {
+    public String add#Entity#(#Entity# #entity#) /{
         #entity#Service.save(#entity#);
         return "redirect:/#entity#s/list";
-    }
+    /}
 
-    @GetMapping("/edit/{id}")
-    public String showEdit#Entity#Form(@PathVariable Long id, Model model) {
+    @GetMapping("/edit//{id/}")
+    public String showEdit#Entity#Form(@PathVariable Long id, Model model) /{
         model.addAttribute("#entity#", #entity#Service.findById(id));
         return "pages/#entity#/edit";
-    }
+    /}
 
     @PostMapping("/edit")
-    public String edit#Entity#(#Entity# #entity#) {
+    public String edit#Entity#(#Entity# #entity#) /{
         // No error handling for yet
-        if (#entity#.getId() != null) {
+        if (#entity#.getId() != null) /{
             #entity#Service.save(#entity#);
-        }
+        /}
         return "redirect:/#entity#s/list";
-    }
+    /}
 
-    @GetMapping("/delete/{id}")
-    public String delete#Entity#(@PathVariable Long id) {
+    @GetMapping("/delete//{id/}")
+    public String delete#Entity#(@PathVariable Long id) /{
         #entity#Service.deleteById(id);
         return "redirect:/#entity#s/list";
-    }
+    /}
+/}    
     }
 }
 
