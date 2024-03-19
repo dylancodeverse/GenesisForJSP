@@ -149,10 +149,6 @@ public class DataSource {
         return f;
     }
 
-    public String getLabelUpFirst() {
-        return getLabel().substring(0, 1).toUpperCase() + getLabel().substring(1);
-    }
-
     // implementation specifique :
     public String[] getPossibleImportForDataSources() {
         Set<String> setString = new HashSet<String>();
@@ -162,6 +158,10 @@ public class DataSource {
             }
         }
         return setString.toArray(new String[setString.size()]);
+    }
+
+    public String getLabelUpFirst() {
+        return getLabel().substring(0, 1).toUpperCase() + getLabel().substring(1);
     }
 
 }
