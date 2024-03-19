@@ -24,6 +24,16 @@ firstLine:{
     }
 }
 
+inputFlex:{
+    jsp:{
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">#Column#:</label>
+                                    <input type="#type#" id="#column#" name="#column#" class="form-control" required />
+                                    <div class="form-text">For errors for example.</div>
+                                </div>        
+    }
+}
+
 inputText:{
     jsp:{
                                 <div class="mb-3">

@@ -97,8 +97,13 @@ public class RequestProcess {
                 dataSource.getAttributes()[i].setPossibleImport(
                         search(new String[] { "types", dataSource.getAttributes()[i].getNewType() }));
 
+                dataSource.getAttributes()[i]
+                        .setHtmlType(
+                                search(new String[] { "HTMLType", dataSource.getAttributes()[i].getHtmlType() })
+                                        .trim());
             } catch (Exception e) {
-                System.out.println("Pas de import  pour: " + dataSource.getAttributes()[i].getTypeSQL()+" => "+dataSource.getAttributes()[i].getNewType());
+                System.out.println("Pas de import  pour: " + dataSource.getAttributes()[i].getTypeSQL() + " => "
+                        + dataSource.getAttributes()[i].getNewType());
             }
         }
         this.dataSource = dataSource;
