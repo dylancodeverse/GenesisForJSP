@@ -1,4 +1,4 @@
-package modeles;
+package scaffold.framework.demo.entity;
 
 import jakarta.persistence.* ;
 
@@ -19,6 +19,7 @@ public class PromotionModel {
     private Integer year ;
 
 
+
     public void setId (Integer value) {
         this.Id= value ;
     }
@@ -32,6 +33,7 @@ public class PromotionModel {
     }
 
 
+
     public Integer getId () {
         return this.Id ;
     }
@@ -43,6 +45,7 @@ public class PromotionModel {
     public Integer getYear () {
         return this.Year ;
     }
+
 
 
     }

@@ -60,9 +60,9 @@ fieldsNoPrimaryKeyDeclaration:{
 
 fieldsForeignClass:{
     java-spring-model:{
-        @ManyToOne
-        @JoinColumn(name = "#name#", nullable = false)
-        #encaps# #type# #name# ;
+    @ManyToOne
+    @JoinColumn(name = "#name#", nullable = false)
+    #encaps# #type# #name# ;
     }
 }
 

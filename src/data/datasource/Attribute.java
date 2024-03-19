@@ -85,4 +85,8 @@ public class Attribute {
         this.HTMLType = HTMLType;
     }
 
+    public String getAttrNameSimple() {
+        return attrName.substring(0, 1).toLowerCase() + attrName.substring(1);
+    }
+
 }
