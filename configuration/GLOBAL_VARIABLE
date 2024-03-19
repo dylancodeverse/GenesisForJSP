@@ -68,6 +68,12 @@ toStringDeclaration:{
     }
 }
 
+repositoryDeclaration:{
+    java-spring-repository:{
+public interface #name# extends JpaRepository<#Entity#, #IdType#> /{
+/}
+    }
+}
 
 classDeclaration:{
     java:{
