@@ -2,7 +2,7 @@
 
 packageDeclaration:{
     java:{
-        package #package#;
+package #package#;
     }    
     c#:{
         namespace #package#
@@ -38,12 +38,40 @@ annotationDeclaration:{
     c#:{
 
     }
+    java-spring-model:{
+@Entity
+@Table(name = "#tableName#")        
+    }
+}
+
+fieldsNoPrimaryKeyDeclaration:{
+    java-spring-model:{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    #encaps# #type# #name# ;
+    }
+}    
+
+fieldsWithPrimaryKey:{
+    java-spring-model:{
+    @Column(name = "#name#", nullable = false)    
+    #encaps# #type# #name# ;
+    }
+}
+
+toStringDeclaration:{
+    java:{
+    @Override
+    public String toString() {
+        return #toString#;
+    }        
+    }
 }
 
 
 classDeclaration:{
     java:{
-        public class #ClassName# /{
+public class #ClassName# /{
     }
     java-springy-model:{
         public class #ClassName# extends Repository<#ClassName#, Long>/{
