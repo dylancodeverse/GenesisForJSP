@@ -1,0 +1,150 @@
+
+
+packageDeclaration:{
+    java:{
+        package #package#;
+    }    
+    c#:{
+        namespace #package#
+        /{
+    }
+    c#-mvc-controller:{
+        namespace #package# ;
+    }
+}
+
+endLine:{
+    java:{
+    /}
+    }
+}
+
+
+Imports:{
+    java:{
+        import #packageSource# ;
+    }    
+    c#:{
+        using #packageSource# ;
+    }
+}
+
+
+
+annotationDeclaration:{
+    java:{
+        @#annotationName#(#annotationValues#)
+    }
+    c#:{
+
+    }
+}
+
+
+classDeclaration:{
+    java:{
+        public class #ClassName# /{
+    }
+    java-springy-model:{
+        public class #ClassName# extends Repository<#ClassName#, Long>/{
+    }
+    c#-model:{
+        public partial class #ClassName#
+        /{
+    }
+    c#-mvc-controller:{
+        public class #ClassName# : ControllerBase
+        /{
+    }
+}
+
+fieldsDeclaration:{
+    java:{
+        #encaps# #type# #name# ;
+    }
+    java-spring-model:{
+        #annotation#
+        #encaps# #type# #name# ;
+    }
+}
+
+
+functionDeclaration:{
+    java:{
+        #encaps# #return# #name# (#args#) /{
+            #body#
+        /}
+    }
+}
+
+
+types:{
+    Date:{
+        java:{
+            java.sql.Date
+        }
+    }    
+}
+
+
+SQLType:{
+    varchar:{
+        java:{
+            String        
+        }
+        c#:{
+            string
+        }
+    }
+
+    int4:{
+        java:{
+            Integer
+        }
+    }
+
+    Integer:{
+        java:{
+            Integer
+        }
+        c#:{
+            int
+        }
+    }
+
+    float8:{
+        java:{
+            double
+        }
+        c#:{
+            double
+        }
+    }
+
+    date:{
+        java:{
+            Date
+        }
+        c#:{
+            DateOnly
+        }
+    }
+
+    serial:{
+        java:{
+            Integer
+        }
+        c#:{
+            int
+        }
+    }
+
+    numeric:{
+        java:{
+            double
+        }
+       c#:{
+            double
+        }
+    }
+}
