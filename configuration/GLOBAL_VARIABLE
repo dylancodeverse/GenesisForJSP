@@ -42,6 +42,9 @@ annotationDeclaration:{
 @Entity
 @Table(name = "#tableName#")        
     }
+    java-spring-service:{
+@Service        
+    }
 }
 
 fieldsNoPrimaryKeyDeclaration:{
@@ -94,7 +97,7 @@ public class #ClassName# /{
 
 fieldsDeclaration:{
     java:{
-        #encaps# #type# #name# ;
+    #encaps# #type# #name# ;
     }
     java-spring-model:{
         #annotation#
@@ -108,6 +111,35 @@ functionDeclaration:{
     #encaps# #return# #name# (#args#) /{
         #body#
     /}
+    }
+}
+
+randomContent:{
+    java-spring-service:{
+        
+    private #Entity#Repository #entity#Repository;
+
+    public #Entity#Service(#Entity#Repository #entity#Repository) /{
+        this.#entity#Repository = #entity#Repository;
+    /}
+
+    public #Entity# save(#Entity# #entity#) /{
+        return #entity#Repository.save(#entity#);
+    /}
+
+    public List<#Entity#> findAll() /{
+        return #entity#Repository.findAll();
+    /}
+
+    public #Entity# findById(Long id) /{
+        return #entity#Repository.findById(id).orElse(null);
+    /}
+
+    public void deleteById(Long id) /{
+        #entity#Repository.deleteById(id);
+    /}
+        
+/}    
     }
 }
 
