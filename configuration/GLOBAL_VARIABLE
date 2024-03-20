@@ -15,7 +15,7 @@ package #package#;
 
 endLine:{
     java:{
-    /}
+/}
     }
 }
 
@@ -265,7 +265,7 @@ PostFlexDeclaration:{
 
 PostFlexArgs:{
     java-spring-controller:{
-            @RequestParam String #FT#Id
+            @RequestParam String #ft#Id
                         
     }
 }
@@ -279,7 +279,7 @@ PostFlexArgs2:{
 PostAddContent1:{
     java-spring-controller:{
         #FT# #ft# = new #FT#();
-        #ft#.set#Id#(Integer.parseInt(#ft#Id));
+        #ft#.setId(Integer.parseInt(#ft#Id));
         #entity#.set#FT#(#ft#);
     }
 }
@@ -293,7 +293,7 @@ PostAddContentEnd:{
 
 GetEditDeclaration:{
     java-spring-controller:{
-    @GetMapping("/edit/{id}")
+    @GetMapping("/edit//{id/}")
     public String showEdit#Entity#Form(@PathVariable #PkType# id, Model model) /{
         #Entity# #entity# = #entity#Service.findById(id);
     }
