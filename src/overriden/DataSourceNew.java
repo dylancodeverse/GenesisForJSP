@@ -2,7 +2,6 @@ package overriden;
 
 import java.util.ArrayList;
 
-import org.w3c.dom.Attr;
 
 import data.datasource.Attribute;
 import data.datasource.DataSource;

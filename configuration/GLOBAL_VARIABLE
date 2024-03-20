@@ -201,10 +201,22 @@ randomContent:{
 }
 
 constructorDeclaration:{
-    java-spring-controller:{
-    public #Entity#Controller(#Entity#Service #entity#Service) /{
+    java-spring-controller-spec:{
+    public #Entity#Controller(#Entity#Service #entity#Service
     }
 }
+constructorDeclaration2:{
+    java-spring-controller-spec:{
+            ,#FT#Service #ft#Service
+    }
+}
+
+constructorDeclaration3:{
+    java-spring-controller-spec:{
+        ) /{
+    }            
+}
+
 
 constructorContent:{
     java-spring-controller:{
@@ -213,6 +225,12 @@ constructorContent:{
 }
 
 constructorContent2:{
+    java-spring-controller-spec:{
+        this.#FT#Service = #ft#;
+    }
+}
+
+constructorContentEnd:{
     All:{
     /}        
     }
