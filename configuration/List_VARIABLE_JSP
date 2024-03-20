@@ -42,9 +42,9 @@ inputForeignTable:{
                                     <select id="ftId" class="form-select" name="ftId">
                                         <% List<FT> fts = (List<FT>) request.getAttribute("fts"); %>
                                         <option value="-1">Choose</option>
-                                        <% for(int i = 0; i < fts.size(); i++) { %>
+                                        <% for(int i = 0; i < fts.size(); i++) /{ %>
                                             <option value="<%= fts.get(i).getId() %>"><%= fts.get(i).toString() %></option>
-                                        <% } %>
+                                        <% /} %>
                                     </select>
                                 </div>        
     }
