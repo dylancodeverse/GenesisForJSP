@@ -216,7 +216,7 @@ navPartOne:{
 }
 
 navPartTwo:{
-            jsp-nav{
+            jsp-nav:{
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="/#entity#s/list" aria-expanded="false">
                         <span>
@@ -229,7 +229,7 @@ navPartTwo:{
 }
 
 navPartThree:{
-    jsp-nav{
+    jsp-nav:{
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

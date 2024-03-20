@@ -31,7 +31,7 @@ public class MainProcess {
     }
 
     public void scriptProcessOnePage(String generationFile, String templateName, String[] table, String pagePath,
-            String ref) throws Exception {
+            String ref, String outPutName) throws Exception {
         Tmpl tmpl = new Tmpl(generationFile);
         // from configuration
         String url = tmpl.getChild().BFS("url").getValue().trim();
@@ -93,7 +93,7 @@ public class MainProcess {
         // charger le contenu template
         String finall = TextProcess.readFromFile(pagePath);
         finall = finall.replaceAll(ref, x);
-        TextProcess.writeTextToFile(finall, outputPath + pagePath + fileExtension);
+        TextProcess.writeTextToFile(finall, outputPath + outPutName + fileExtension);
 
     }
 
