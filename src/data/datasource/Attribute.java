@@ -89,4 +89,8 @@ public class Attribute {
         return attrName.substring(0, 1).toLowerCase() + attrName.substring(1);
     }
 
+    public String getAttrNameUpFirst() {
+        return attrName.substring(0, 1).toUpperCase() + attrName.substring(1);
+    }
+
 }
