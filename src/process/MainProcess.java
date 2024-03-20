@@ -1,4 +1,7 @@
 package process;
+
+import java.util.ArrayList;
+
 import data.datasource.DataSource;
 import data.process.SQLDataHandler;
 import process.file.TextProcess;
@@ -25,6 +28,73 @@ public class MainProcess {
         DataSource[] dataSources = new SQLDataHandler(url, user,
                 paswd).getDataSources();
         return dataSources;
+    }
+
+    public void scriptProcessOnePage(String generationFile, String templateName, String[] table, String pagePath,
+            String ref) throws Exception {
+        Tmpl tmpl = new Tmpl(generationFile);
+        // from configuration
+        String url = tmpl.getChild().BFS("url").getValue().trim();
+        String user = tmpl.getChild().BFS("user").getValue().trim();
+        String paswd = tmpl.getChild().BFS("password").getValue().trim();
+        String globV = tmpl.getChild().BFS("global_variable").getValue().trim();
+        String templateFile = tmpl.search("template", templateName).getValue().trim();
+        String fileExtension = search(tmpl, new String[] { "fileExtension" }, templateName).trim();
+        String outputPath = search(tmpl, new String[] { "outputPath" }, templateName).trim();
+        String fileNameSuffix = search(tmpl, new String[] { "fileNameSuffix" }, templateName).trim();
+        // ----------------------------------------
+        // process
+        DataSource[] dataSources = getDataSources(url, user, paswd);
+
+        if (table.length == 0) {
+            System.out.println("No file generated because no table given");
+        }
+        ArrayList<String> lsResult = new ArrayList<>();
+        for (int i = 0; i < table.length; i++) {
+            if (!table[i].equals("*")) {
+                DataSource dataSource = null;
+                for (int j = 0; j < dataSources.length; j++) {
+                    if (dataSources[j].getLabel().equalsIgnoreCase(table[i]))
+                        dataSource = dataSources[j];
+                }
+                if (dataSource == null) {
+                    throw new Exception("No table named " + table[i] + " found");
+                }
+                RequestProcess requestProcess = new RequestProcess(dataSource,
+                        globV,
+                        templateFile);
+                String fileName = dataSource.getLabelUpFirst();
+                if (!fileNameSuffix.isBlank()) {
+                    fileName = fileName + fileNameSuffix;
+                }
+                lsResult.add(requestProcess.getResultstAsString());
+                System.out.println(fileName + " build ok!");
+
+            } else {
+                lsResult = new ArrayList<>();
+                for (int j = 0; j < dataSources.length; j++) {
+                    RequestProcess requestProcess = new RequestProcess(dataSources[j],
+                            globV,
+                            templateFile);
+                    String fileName = dataSources[j].getLabelUpFirst();
+                    if (!fileNameSuffix.isBlank()) {
+                        fileName = fileName + fileNameSuffix;
+                    }
+                    lsResult.add(requestProcess.getResultstAsString());
+                }
+                break;
+            }
+        }
+        // fusionner les resultats:
+        String x = "";
+        for (String string : lsResult) {
+            x += string;
+        }
+        // charger le contenu template
+        String finall = TextProcess.readFromFile(pagePath);
+        finall = finall.replaceAll(ref, x);
+        TextProcess.writeTextToFile(finall, outputPath + pagePath + fileExtension);
+
     }
 
     public void scriptProcess(String generationFile, String templateName, String[] table) throws Exception {
