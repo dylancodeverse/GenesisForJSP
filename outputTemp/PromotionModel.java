@@ -21,29 +21,29 @@ public class PromotionModel {
 
 
     public void setId (Integer value) {
-        this.Id= value ;
+        this.id= value ;
     }
 
     public void setName (String value) {
-        this.Name= value ;
+        this.name= value ;
     }
 
     public void setYear (Integer value) {
-        this.Year= value ;
+        this.year= value ;
     }
 
 
 
     public Integer getId () {
-        return this.Id ;
+        return this.id ;
     }
 
     public String getName () {
-        return this.Name ;
+        return this.name ;
     }
 
     public Integer getYear () {
-        return this.Year ;
+        return this.year ;
     }
 
 

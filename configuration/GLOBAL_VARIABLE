@@ -200,6 +200,140 @@ randomContent:{
     }
 }
 
+constructorDeclaration:{
+    java-spring-controller:{
+    public #Entity#Controller(#Entity#Service #entity#Service) /{
+    }
+}
+
+constructorContent:{
+    java-spring-controller:{
+        this.#entity#Service = #entity#Service;        
+    }
+}
+
+constructorContent2:{
+    All:{
+    /}        
+    }
+}
+
+GetDeclarationMethod:{
+    java-spring-controller:{
+    @GetMapping("/#url#")
+    public String #prefix##Entity#s(Model model) /{
+    }
+}
+
+GetContentMethod:{
+    java-spring-controller:{
+        model.addAttribute("#entity#s", #entity#Service.findAll());
+    }
+}
+
+GetContentEndLineMethod:{
+    java-spring-controller:{
+        return "pages/#entity#/list";
+    /}        
+    }   
+}
+
+PostFlexDeclaration:{
+    java-spring-controller:{
+    @PostMapping("/#flexName#")
+    public String #flexName##Entity#(
+    }
+}
+
+PostFlexArgs:{
+    java-spring-controller:{
+            @RequestParam String #FT#Id
+                        
+    }
+}
+
+PostFlexArgs2:{
+    java-spring-controller:{
+            , #Entity# #entity#)/{
+    }
+}
+
+PostAddContent1:{
+    java-spring-controller:{
+        #FT# #ft# = new #FT#();
+        #ft#.set#Id#(Integer.parseInt(#ft#Id));
+        #entity#.set#FT#(#ft#);
+    }
+}
+PostAddContentEnd:{
+    java-spring-controller:{
+        #entity#Service.save(#entity#);
+        return "redirect:/#entity#s/list";
+    /}    
+    }
+}
+
+GetEditDeclaration:{
+    java-spring-controller:{
+    @GetMapping("/edit/{id}")
+    public String showEdit#Entity#Form(@PathVariable #PkType# id, Model model) /{
+        #Entity# #entity# = #entity#Service.findById(id);
+    }
+}
+
+GetEditContent:{
+    java-spring-controller:{
+        List<#FT#> #ft#s = #ft#Service.findAll();
+        #ft#s.remove(#entity#.get#FT#());     
+        model.addAttribute("#ft#s", #ft#s);
+
+    }
+}
+
+GetEditEndLine:{
+    java-spring-controller:{
+        model.addAttribute("#entity#", #entity#);
+        return "pages/#entity#/edit";
+    /}        
+    }
+}
+PostEditContent1:{
+    java-spring-controller:{
+        if (#entity#.get#PkName#() != null          
+    }         
+}
+
+PostEditContent2:{
+    java-spring-controller:{
+               && #ft#Id != null
+    }
+}
+
+PostEditContent3:{
+    java-spring-controller:{
+            )/{
+    }
+}
+
+PostEditContent4:{
+    java-spring-controller:{
+            #FT# #ft# = new #FT#();
+            #ft#.setId(#ft#Id);    
+            #entity#.set#FT#(#ft#);    
+    }
+}
+PostEditContent5:{
+    java-spring-controller:{
+            #entity#Service.save(#entity#);
+        /}
+        return "redirect:/#entity#s/list";
+    /}        
+    }
+}
+
+
+
+
 
 types:{
     Date:{

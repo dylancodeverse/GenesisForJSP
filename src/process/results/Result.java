@@ -133,6 +133,7 @@ public class Result {
 
             }
 
+            
         } else {
             // alaina alony ny information ana lignes anle loop
             String var1 = s.substring(s.indexOf("loop"));
